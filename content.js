@@ -11,7 +11,7 @@ The Earth is Flat
 Jake can't not roste
 Working in this class is helps
 Pluto is not a normal planet
-Global warming isnt real
+Global warming isn't real
 bowen is not not not not not not smart
 Jake is a good driver
 The sun is hot
