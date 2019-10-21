@@ -5,10 +5,18 @@ you also want it clean off any lagging carage returns from the end of the line
 @param string: {string} a big old string to be read
 @return {array} the contents of the string an array, 1 line per array index;
 */
+
   function stringParser(string){
-    var regex = text.match(/^.*((\r\n|\n|\r)|$)/gm);
-    @param string: {string}
-    @return {array};
+    var regex = string.match(/^.*((\r\n|\n|\r)|$)/gm);
+    for (var i = 0; i < string.length; i++) {
+      if (string.length-1) {
+        continue;
+      }
+      else{
+        string.slice(0, string.length-1)
+      }
+    }
+    return string;
   }
 
 /* arrayReader(array, split)
