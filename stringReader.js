@@ -9,7 +9,7 @@ you also want it clean off any lagging carage returns from the end of the line
   function stringParser(string){
     var regex = string.match(/^.*((\r\n|\n|\r)|$)/gm);
     for (var i = 0; i < regex.length; i++) {
-      if (regex.length-1) {
+      if (i == regex.length-1) {
         continue;
       }
       else{
