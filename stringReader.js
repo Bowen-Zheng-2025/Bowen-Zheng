@@ -8,15 +8,15 @@ you also want it clean off any lagging carage returns from the end of the line
 
   function stringParser(string){
     var regex = string.match(/^.*((\r\n|\n|\r)|$)/gm);
-    for (var i = 0; i < string.length; i++) {
-      if (string.length-1) {
+    for (var i = 0; i < regex.length; i++) {
+      if (i == regex.length-1) {
         continue;
       }
       else{
-        string.slice(0, string.length-1)
+        regex[i] = regex[i].slice(0, regex[i].length-1);
       }
     }
-    return string;
+    return regex;
   }
 
 /* arrayReader(array, split)
@@ -29,6 +29,7 @@ makes a new array where each element is an object.
 @param split: {string} the item to split at
 @return {array} an array of objects keyed with str and bool
 */
+
 
 /* stringReader(string, split=";")
 a wrapper function for stringParser and arrayReader
