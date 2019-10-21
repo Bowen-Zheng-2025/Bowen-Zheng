@@ -7,27 +7,27 @@ const content = `Aidan started the year doing well; true
 Aidan is still doing well; false`;
 */
 const content = `Jake is smart; false
-The Earth is flat; false
+The Earth is flat; true
 Jake can't not roast; true
 Working in this class is helps; true
 Pluto is not a normal planet; true
-Global warming isn't real; false
+Global warming isn't real; true
 Bowen is not not not not not not smart; true
 Jake is a good driver; false
-The sun is hot; true
+The sun is hot; false
 Aidan is not lazy; false
 When working with Aidan, litle work gets done; true
 Mike isn't a total beast with Monty in Ros; true
 Pigeons were made by the government; true
-bad dragon is comoto dragon breeding company with the goal of making them a domesticated pet
+bad dragon is comoto dragon breeding company with the goal of making them a domesticated pet; true
 The earth is not flat; true
 The earth is not a perfect sphere; true
-Radiation kills; true
+Radiation kills; false
 Mike can spell much good; false
-global warming is bad; true
+global warming is bad; false
 memphis = kim john un; true
-Fire hurts; true
-aidan = bad at siege; true
+Fire hurts; false
+aidan = bad at siege; false
 Memphis is secretly tall but has prosthetic legs; true
 Aidan noob rages on rainbow 6 siege (and sucks at it); false
 Euan is memphis's twin and took his legs; true
@@ -49,7 +49,7 @@ Aidan has a youtube channel called Blaze Conroy (Go check it out!); true
 Sharks have arms; false
 Bowen doesn't have glasses; false
 Kade has a crush on Brad; true
-Euan can swim; true
+Euan can swim; false
 Mike is trash; true
 Aidan is the better leader; true
 Aidan has a future; true
@@ -60,7 +60,7 @@ Alienwear is a good brand; false
 The sky is blue; true
 Lamorie has baby legs; true
 Jake is a noob; true
-PC masterace; truw
+PC masterace; true
 Jake is a good driver; false
 Mike is not a squeaker; false
 Aidan has a wallet; false
