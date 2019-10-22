@@ -9,11 +9,11 @@ you also want it clean off any lagging carage returns from the end of the line
   function stringParser(string){
     var regex = string.match(/^.*((\r\n|\n|\r)|$)/gm);
     for (var i = 0; i < regex.length; i++) {
-      if (regex.length-1) {
+      if (i == regex.length-1) {
         continue;
       }
       else{
-        regex[i] = regex[i].slice(0, -1);
+        regex[i] = regex[i].slice(0, regex[i].length-1);
       }
     }
     return regex;
@@ -29,6 +29,21 @@ makes a new array where each element is an object.
 @param split: {string} the item to split at
 @return {array} an array of objects keyed with str and bool
 */
+
+  function arrayReader(array,split){
+    var retArr = [];
+    for (var i = 0; i < array.length; i++) {
+      var obj = {}
+      var line = array[i].split(split)
+        obj.str = line[0].trim();
+      if(line[1].trim() === "true"){obj.bool = true;}
+      else{obj.bool = false}
+      retArr.push(obj)
+    }
+    return retArr;
+  }
+
+
 
 
 /* stringReader(string, split=";")
