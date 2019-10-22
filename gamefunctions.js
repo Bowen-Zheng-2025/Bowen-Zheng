@@ -5,7 +5,8 @@ a helper function to return whole number randoms
 */
 
   function randNum(max){
-
+    var int = Math.floor(Math.random() * max);
+    return int;
   }
 
 /* uniqueIndex(max, number)
