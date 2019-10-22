@@ -5,7 +5,7 @@ a helper function to return whole number randoms
 */
 
   function randNum(max){
-    var int = Math.floor(Math.random() * max);
+    var int = Math.floor(Math.random() * max + 1);
     return int;
   }
 
@@ -15,6 +15,10 @@ a helper function to get unique numbers out of a range so as to avoid reuse.
 @param number {int} the number of responses to return
 @return {array} an array of the selected number
 */
+
+  function uniqueIndex(max, number){
+
+  }
 
 /* andEval(condition1, condition2)
 takes two conditions and makes a new condition out of them based on their combined
