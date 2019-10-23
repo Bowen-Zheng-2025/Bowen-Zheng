@@ -36,9 +36,11 @@ makes a new array where each element is an object.
       var obj = {}
       var line = array[i].split(split)
         obj.str = line[0].trim();
+        obj.negated == false;
       if(line[1].trim() === "true"){obj.bool = true;}
       else{obj.bool = false}
       retArr.push(obj)
+
     }
     return retArr;
   }
@@ -57,3 +59,11 @@ function stringReader(string, split=";"){
   var arrRea = arrayReader(strPar,split);
   return arrRea;
 }
+/* arrayReader(array, split)
+take an array of strings in the format of text 1 split text 2
+text 2 is assumed to be the words true or false. Uses these to set bools
+makes a new array where each element is an object.
+@param array: {array} an array with string containing the split
+@param split: {string} the item to split at
+@return {array} an array of objects keyed with str and bool
+*/
