@@ -40,7 +40,9 @@ and state and combines the text of the two conditions. Cleans up text some
 */
 
   function andEval(condition1, condition2){
-
+    var cond1 = condition1.trim();
+    var cond2 = condition2.trim();
+    return cond1 + " " + cond2;
   }
 
 
