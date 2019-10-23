@@ -5,8 +5,7 @@ a helper function to return whole number randoms
 */
 
   function randNum(max){
-    var int = Math.floor(Math.random() * max + 1);
-    return int;
+    return Math.floor(Math.random() * max + 1);
   }
 
 /* uniqueIndex(max, number)
@@ -15,9 +14,21 @@ a helper function to get unique numbers out of a range so as to avoid reuse.
 @param number {int} the number of responses to return
 @return {array} an array of the selected number
 */
-
   function uniqueIndex(max, number){
-
+    var array = [];
+    var numArray = [];
+    array.length = max;
+    for (var i = 0; i < number; i++) {
+      var num = randNum(max)
+      if (array[num] == "") {
+        numArray[i] = num;
+      }else{
+        var num = randNum(max)
+        i--
+      }
+      array[num] = ""
+    }
+    return numArray;
   }
 
 /* andEval(condition1, condition2)
@@ -28,6 +39,11 @@ and state and combines the text of the two conditions. Cleans up text some
 @return {object} an object with str and bool keys
 */
 
+  function andEval(condition1, condition2){
+
+  }
+
+
 /* orEval(condition1, condition2)
 takes two conditions and makes a new condition out of them based on their combined
 or state and combines the text of the two conditions. Cleans up text some
@@ -35,3 +51,7 @@ or state and combines the text of the two conditions. Cleans up text some
 @param condition2 {object} an object with str and bool keys
 @return {object} an object with str and bool keys
 */
+
+  function orEval(condition1, condition2){
+
+  }
