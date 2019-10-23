@@ -36,7 +36,7 @@ makes a new array where each element is an object.
       var obj = {}
       var line = array[i].split(split)
         obj.str = line[0].trim();
-        obj.negated == false;
+        obj.negated = false;
       if(line[1].trim() === "true"){obj.bool = true;}
       else{obj.bool = false}
       retArr.push(obj)
