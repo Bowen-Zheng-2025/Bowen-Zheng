@@ -96,6 +96,20 @@ front of it, sets the negated key to true
 @return {object} an object with str, bool, and negated keys
 */
 
+  function notEval(condition){
+    var obj = {};
+    if (condition.negated == true) {
+    condition.negated = false;
+    console.log(condition.negated)
+      return "It is not the case that " + condition.str;
+    }else{
+      condition.negated = true;
+      console.log(condition.negated)
+        return "It is not the case that " + condition.str;
+    }
+      return;
+    }
+
 //3. implement the following
 /* makeQuestion(conditions, maxDepth=3, negate=.2)
 takes an array of condition objects formated {str: text, bool: bool, negated: bool}
