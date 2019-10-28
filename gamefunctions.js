@@ -40,9 +40,11 @@ and state and combines the text of the two conditions. Cleans up text some
 */
 
   function andEval(condition1, condition2){
-    var cond1 = condition1.trim();
-    var cond2 = condition2.trim();
-    return cond1 + " and " + cond2;
+    var retObj = {};
+    retObj.str = condition1 + "and" + condition2;
+    retObj.negate = condition1.negated;
+    retObj.bool = condition1.bool && condition2.bool;
+    return retObj;
   }
 
 
@@ -57,9 +59,11 @@ or state and combines the text of the two conditions. Cleans up text some
 */
 
   function orEval(condition1, condition2){
-    var cond1 = condition1.trim();
-    var cond2 = condition2.trim();
-    return cond1 + " or " + cond2;
+    var retObj = {};
+    retObj.str = condition1 + "or" + condition2;
+    retObj.negate = condition1.negated;
+    retObj.bool = condition1.bool && condition2.bool;
+    return retObj;
   }
 
 
