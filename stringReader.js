@@ -97,17 +97,8 @@ front of it, sets the negated key to true
 */
 
   function notEval(condition){
-    var obj = {};
-    if (condition.negated == true) {
-    condition.negated = false;
-    console.log(condition.negated)
-      return "It is not the case that " + condition.str;
-    }else{
-      condition.negated = true;
-      console.log(condition.negated)
-        return "It is not the case that " + condition.str;
-    }
-      return;
+    return {str: "it is not the case " + condition.str,
+    bool: !condition.bool, negated: !condition.negated  }
     }
 
 //3. implement the following
