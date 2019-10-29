@@ -34,7 +34,7 @@ makes a new array where each element is an object.
     var retArr = [];
     for (var i = 0; i < array.length; i++) {
       var obj = {}
-      var line = array[i].split(split)
+      var line = array[i].split(split);
         obj.str = line[0].trim();
         obj.negated = false;
       if(line[1].trim() === "true"){obj.bool = true;}
