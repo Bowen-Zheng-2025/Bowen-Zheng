@@ -76,21 +76,58 @@ front of it, sets the negated key to true
 @return {object} an object with str, bool, and negated keys
 */
 function notEval(con){
+  console.log(con);
   return {str:"It is not the case that" + con.str, bool:!con.bool, negated:!con.negated}
 }
 
-/* makeQuestion(conditions, maxDepth=3, negate=.2)
-takes an array of condition objects formated {str: text, bool: bool, negated: bool}
-and uses it make a question of depths between 1 - maxDepth combined statement length
-it should randomly use and or ors at a 50% chance each
-@param condition {array} an array of objects formatted as listed above
-@param maxDepth {int} number of conditionals to be put together at max
-@param negate {float} chance of a negation happening
-@return a new object with the same general format
-*/
+function makeQuestion(conditions, maxDepth=3, negate=.2){
+var retObj = {};
+var depth = randNum(maxDepth);
+ if (depth == 1) {
+  var condi = conditions[randNum(conditions.length)];
+     if (Math.random() < negate) {
+       return notEval(condi)
+     }
+     else{
+       return condi;
+     }
+ }
+ else {
+   var ind = uniqueIndex(conditions.length, depth);
+}
+ for (var i = 0; i < depth -1; i++) {
+   if (i = 0) {
+     retObj = conditions[ind.pop];
+     if (Max.random() < negate) {
+        retObj = notEval(retObj)
+      }
+      else {
+        continue;
+      }
+    }
+      else {
+        var ais = conditions[ind.pop()];
+        if (Math.random() < negate) {
+          console.log(ais);
+           ais = notEval(ais);
+       var pipe = Math.random();
+       if (pipe <  0.5) {
+         retObj = orEval(ais, retObj);
+       }
+       else {
+         retObj = andEval(ais, retObj);
+       }
+      }
+    }
+  }
+  return retObj;
+}
 
-/* makeSentence(condition)
-Makes a (likely run-on) sentence out of a conditional stored in an object with the keys str, bool, and negated. It does the following: if negated then it capitalized the i in "it is not the case" and adds a period to the end of the str. If it is not negated then it adds the phrase "It is the case " to the start of the str and adds a period to the end of the string.
-@param condition {array} an array of objects formatted as listed above
-@return {object} a new object with the same general format
-*/
+  function makeSentence(condition){
+    if (condition.negated) {
+      condition.str = "I" + condition.str.slice(1) + ".";
+    }else{
+      condition.str = "It is the case " + condition.str + "."
+    }
+    return condition;
+  }
