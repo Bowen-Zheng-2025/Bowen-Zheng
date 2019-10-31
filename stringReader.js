@@ -144,6 +144,7 @@ var depth = randNum(maxDepth);
       else {
         continue;
       }
+    }
       else {
         var ais = conditions[ind.pop()];
         if (Max.random() < negate) {
