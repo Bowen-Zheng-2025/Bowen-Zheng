@@ -46,8 +46,6 @@ makes a new array where each element is an object.
   }
 
 
-
-
 /* stringReader(string, split=";")
 a wrapper function for stringParser and arrayReader
 @param string {string} a heaping long string covering many lines
@@ -122,3 +120,44 @@ Makes a (likely run-on) sentence out of a conditional stored in an object with t
 @param condition {array} an array of objects formatted as listed above
 @return {object} a new object with the same general format
 */
+function makeQuestion(conditions, maxDepth=3, negate=.2){
+var retObj = {};
+var depth = randNum(maxDepth);
+ if (depth = 1) {
+  var condi = conditions[randNum(conditions.length)];
+     if (Math.random() < negate) {
+       return notEval(condi)
+     }
+     else{
+       return condi;
+     }
+ }
+ else {
+   var ind = uniqueIndex(conditions.length, depth);
+}
+ for (var i = 0; i < depth -1; i++) {
+   if (i = 0) {
+     retObj = conditions[ind.pop];
+     if (Max.random() < negate) {
+        retObj = notEval(retObj)
+      }
+      else {
+        continue;
+      }
+      else {
+        var ais = conditions[ind.pop()];
+        if (Max.random() < negate) {
+           ais = notEval(ais);
+       var pipe = Math.random();
+       if (pipe <  0.5) {
+         retObj = orEval(ais, retObj);
+       }
+       else {
+         retObj = andEval(ais, retObj);
+       }
+      }
+    }
+  }
+  return retObj;
+}
+}

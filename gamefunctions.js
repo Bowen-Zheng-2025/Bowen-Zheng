@@ -5,7 +5,7 @@ a helper function to return whole number randoms
 */
 
   function randNum(max){
-    return Math.floor(Math.random() * max + 1);
+    return Math.floor((Math.random() * max) + 1);
   }
 
 /* uniqueIndex(max, number)
@@ -30,6 +30,7 @@ a helper function to get unique numbers out of a range so as to avoid reuse.
     }
     return numArray;
   }
+
 
 /* andEval(condition1, condition2)
 takes two conditions and makes a new condition out of them based on their combined
