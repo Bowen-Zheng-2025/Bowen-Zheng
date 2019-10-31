@@ -75,7 +75,9 @@ front of it, sets the negated key to true
 @param condtion {object} an object with str and bool keys
 @return {object} an object with str, bool, and negated keys
 */
-
+function notEval(con){
+  return {str:"It is not the case that" + con.str, con.bool:!con.bool,con.negated:!con.negated}
+}
 
 /* makeQuestion(conditions, maxDepth=3, negate=.2)
 takes an array of condition objects formated {str: text, bool: bool, negated: bool}
