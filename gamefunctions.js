@@ -76,7 +76,7 @@ front of it, sets the negated key to true
 @return {object} an object with str, bool, and negated keys
 */
 function notEval(con){
-  return {str:"It is not the case that" + con.str, con.bool:!con.bool,con.negated:!con.negated}
+  return {str:"It is not the case that" + con.str, bool:!con.bool, negated:!con.negated}
 }
 
 /* makeQuestion(conditions, maxDepth=3, negate=.2)

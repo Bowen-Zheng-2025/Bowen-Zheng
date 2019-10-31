@@ -161,10 +161,7 @@ var depth = randNum(maxDepth);
   }
   return retObj;
 }
-}
-
-  }
-  function makeQuestion(conditions, maxDepth=3, negate-.2){
+  function makeQuestion(conditions, maxDepth=3, negates=.2){
 
   }
   /* makeSentence(condition)
