@@ -39,7 +39,7 @@ if the player enters r, have it set the score to 0.
     if (pro == 2 && makeQ.bool == true) {
         score += 1;
     }
-    if (pro == "q") {
+    if (pro == "q" || pro == "Q") {
       playGame = false;
     }
  }

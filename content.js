@@ -17,7 +17,7 @@ Jake is a good driver; false
 The sun is hot; false
 Aidan is not lazy; false
 When working with Aidan, litle work gets done; true
-Mike isn't a total beast with Monty in Ros; true
+Mike isn't a total beast with Monty in R6S; true
 Pigeons were made by the government; true
 bad dragon is comoto dragon breeding company with the goal of making them a domesticated pet; true
 The earth is not flat; true
