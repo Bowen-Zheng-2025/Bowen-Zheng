@@ -19,11 +19,11 @@ a helper function to get unique numbers out of a range so as to avoid reuse.
     var numArray = [];
     array.length = max;
     for (var i = 0; i < number; i++) {
-      var num = randNum(max)
+      var num = randNum(max -1)
       if (array[num] == "") {
         numArray[i] = num;
       }else{
-        var num = randNum(max)
+        var num = randNum(max -1)
         i--
       }
       array[num] = ""
