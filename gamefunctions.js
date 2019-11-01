@@ -42,7 +42,7 @@ and state and combines the text of the two conditions. Cleans up text some
 
   function andEval(condition1, condition2){
     var retObj = {};
-    retObj.str = condition1 + "and" + condition2;
+    retObj.str = condition1.str + " and " + condition2.str;
     retObj.negate = condition1.negated;
     retObj.bool = condition1.bool && condition2.bool;
     return retObj;
@@ -61,9 +61,9 @@ or state and combines the text of the two conditions. Cleans up text some
 
   function orEval(condition1, condition2){
     var retObj = {};
-    retObj.str = condition1 + "or" + condition2;
-    retObj.negate = condition1.negated;
-    retObj.bool = condition1.bool && condition2.bool;
+    retObj.str = condition1.str + " or " + condition2.str;
+    retObj.negated = condition1.negated;
+    retObj.bool = condition1.bool || condition2.bool;
     return retObj;
   }
 
@@ -75,9 +75,8 @@ front of it, sets the negated key to true
 @param condtion {object} an object with str and bool keys
 @return {object} an object with str, bool, and negated keys
 */
-function notEval(con){
-  console.log(con);
-  return {str:"It is not the case that" + con.str, bool:!con.bool, negated:!con.negated}
+function notEval(condition){
+  return {str:"It is not the case that " + condition.str, bool: !condition.bool, negated: !condition.negated}
 }
 
 function makeQuestion(conditions, maxDepth=3, negate=.2){
@@ -85,43 +84,28 @@ var retObj = {};
 var depth = randNum(maxDepth);
  if (depth == 1) {
   var condi = conditions[randNum(conditions.length)];
-     if (Math.random() < negate) {
-       return notEval(condi)
-     }
-     else{
-       return condi;
-     }
+     if (Math.random() < negate) { return notEval(condi); }
+     else{ return condi; }
  }
  else {
    var ind = uniqueIndex(conditions.length, depth);
 }
  for (var i = 0; i < depth -1; i++) {
-   if (i = 0) {
-     retObj = conditions[ind.pop];
-     if (Max.random() < negate) {
-        retObj = notEval(retObj)
-      }
-      else {
-        continue;
-      }
+   if (i == 0) {
+     retObj = conditions[ind.pop()];
+     if (Math.random() < negate) {  retObj = notEval(retObj) }
+      else { continue; }
     }
       else {
         var ais = conditions[ind.pop()];
-        if (Math.random() < negate) {
-          console.log(ais);
-           ais = notEval(ais);
+        if (Math.random() < negate) { ais = notEval(ais); }
        var pipe = Math.random();
-       if (pipe <  0.5) {
-         retObj = orEval(ais, retObj);
-       }
-       else {
-         retObj = andEval(ais, retObj);
-       }
+       if (pipe < .5) { retObj = orEval(ais, retObj); }
+       else { retObj = andEval(ais, retObj); }
       }
     }
+    return retObj;
   }
-  return retObj;
-}
 
   function makeSentence(condition){
     if (condition.negated) {
