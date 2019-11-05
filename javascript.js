@@ -21,12 +21,15 @@ if the player responds with a q have it set the playGame to false
 
 if the player enters r, have it set the score to 0.
 */
+function makeGame(){
   var playGame = true;
   var score = 0;
   var questions = stringReader(content);
-  while (playGame == true) {
+  while (playGame) {
     var makeQ = makeQuestion(questions);
-    var pro = prompt("Hey dum-dum! Your score is " + score + "; If you want to get points so you don't suck, the question is: " + makeQ.str);
+    var pro = ("Your score is " + score + ";  The question is: " + makeQ.str);
+    var trueBt = 
+    var falseBt =
     if (pro == 1 && makeQ.bool == true) {
         score += 1;
     }
@@ -42,4 +45,8 @@ if the player enters r, have it set the score to 0.
     if (pro == "q" || pro == "Q") {
       playGame = false;
     }
+    return pro;
  }
+}
+
+document.getElementById("replace").innerHTML = makeGame();
